@@ -5,6 +5,7 @@ namespace MagicTileLite.Scripts.Mics
         public const int TARGET_FRAMERATE = 60;
 
         public const string KEY_PREF_HIGH_SCORE = "HighScore";
+        public const string KEY_PREF_GAME_SPEED = "GameSpeed";
 
         public const float SPAWN_TIME_GAP_LEVEL_MEDIUM = 1;
         public const float SPAWN_TIME_GAP_LEVEL_FAST = 0.85f;
@@ -48,5 +49,7 @@ namespace MagicTileLite.Scripts.Mics
         public const float TILE_SPEED_LEVEL_FAST = 21;
         public const float TILE_SPEED_LEVEL_ULTRA_FAST = 24;
         public const float TILE_SPEED_LEVEL_NOT_HUMAN = 28;
+        
+        public const float TILE_FALL_DISTANCE_FOR_PERFECT_HIT = 26;
     }
 }

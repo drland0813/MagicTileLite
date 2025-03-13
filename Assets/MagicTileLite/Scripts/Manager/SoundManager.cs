@@ -9,10 +9,12 @@ namespace Drland.MagicTileLite
     public class SoundManager : MonoBehaviour
     {
         [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private TextAsset _beatMapConfig;
 
         private List<Song> _listSong;
         private Song _songSelected;
         private GameSpeed _gameSpeed;
+        
 
         public void Init(GameSpeed gameSpeed)
         {
@@ -39,7 +41,7 @@ namespace Drland.MagicTileLite
 
         }
 
-        private float GetAudioPitch()
+        public float GetAudioPitch()
         {
             var factor = _gameSpeed switch
             {
@@ -59,8 +61,18 @@ namespace Drland.MagicTileLite
             _songSelected.ID = 01;
             _songSelected.Name = "GoldenHour";
             _songSelected.BeatMap = new BeatMap();
-
+            
             GenerateRandomNotesData();
+            return;
+
+            if (_beatMapConfig != null)
+            {
+                _songSelected = JsonUtility.FromJson<Song>(_beatMapConfig.text);
+            }
+            else
+            {
+                GenerateRandomNotesData();
+            }
         }
 
         private void GenerateRandomNotesData()
@@ -81,7 +93,7 @@ namespace Drland.MagicTileLite
 
         private float GetSpawnTimeGap()
         {
-            var gameSpeed = GameplayManager.Instance.GameSpeed;
+            var gameSpeed = GamePlayController.Instance.GameSpeed;
             var timeGap = gameSpeed switch
             {
                 GameSpeed.Medium => GameConstants.SPAWN_TIME_GAP_LEVEL_MEDIUM,

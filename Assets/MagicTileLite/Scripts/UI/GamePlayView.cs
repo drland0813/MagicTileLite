@@ -1,4 +1,5 @@
 using System;
+using Common.UI;
 using DG.Tweening;
 using MagicTileLite.Scripts.Mics;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Drland.MagicTileLite
 {
-    public class GameplayUI : MonoBehaviour
+    public class GamePlayView : UIController
     {
         [SerializeField] private Text _countDownText;
         public ScoreUI Score;

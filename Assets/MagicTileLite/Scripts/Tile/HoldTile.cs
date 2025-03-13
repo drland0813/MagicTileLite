@@ -67,8 +67,8 @@ namespace Drland.MagicTileLite
             if (!_isHoldProcessReachMaxPoint) return;
             
             _tileUI.PlayFadeEffect();
-            GameplayManager.Instance.AddBonusScore();
-            GameplayManager.Instance.UI.Effect.ShowFloatTextUI(GameConstants.BONUS_HOLD_SCORE, transform.position);
+            GamePlayController.Instance.AddBonusScore();
+            GamePlayController.Instance.UI.Effect.ShowFloatTextUI(GameConstants.BONUS_HOLD_SCORE, transform.position);
         }
 
         private IEnumerator HoldCoroutine()

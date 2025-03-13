@@ -13,8 +13,7 @@ namespace Drland.MagicTileLite
 
         protected override void Interact()
         {
-            _tileUI.PlayChangeColorEffect();
-            _tileUI.PlayFadeEffect();
+            _tileUI.DoInteract();
             base.Interact();
         }
     }

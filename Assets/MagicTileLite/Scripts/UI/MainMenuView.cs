@@ -1,4 +1,5 @@
 using System;
+using Common.UI;
 using MagicTileLite.Scripts.Mics;
 using TMPro;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Drland.MagicTileLite
 {
-    public class MainMenuUI : UIController
+    public class MainMenuView : UIController
     {
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _exitButton;
@@ -15,7 +16,7 @@ namespace Drland.MagicTileLite
         public Action OnPlay;
         public Action OnExit;
 
-        private void Awake()
+        public void Init()
         {
             _playButton.onClick.AddListener(Play);
             _exitButton.onClick.AddListener(Exit);

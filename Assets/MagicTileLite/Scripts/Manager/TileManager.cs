@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using MagicTileLite.Scripts.Mics;
 using UnityEngine;
@@ -26,10 +27,11 @@ namespace Drland.MagicTileLite
 
 
         private BeatMap _beatMap;
-        private int _currentBeatMapIndex;
+        private int _currentNoteIndex;
         private GameSpeed _gameSpeed;
 
         private bool _isGoldenTime;
+        private float _currentTime;
 
         public void Init(GameSpeed gameSpeed ,BeatMap beatMap)
         {
@@ -40,7 +42,7 @@ namespace Drland.MagicTileLite
             _touchTileObjectPool = new ObjectPool<Tile>(_touchTileSample);
             _holdTileObjectPool = new ObjectPool<Tile>(_holdTileSample);
             _spawnPosition = _spawnTransform.position;
-            _checkPointPosition = GameplayManager.Instance.GetCheckPointPosition();
+            _checkPointPosition = GamePlayController.Instance.GetCheckPointPosition();
             _totalLines = _linesTransform.Length;
         }
 
@@ -52,15 +54,16 @@ namespace Drland.MagicTileLite
         public void UpdateData()
         {
             if (_isEndGame) return;
-            if (GameplayManager.Instance.Sound.GetTimeSongRemain() < 0)
+            if (GamePlayController.Instance.Sound.GetTimeSongRemain() < 0)
             {
-                _isEndGame = true;
-                GameplayManager.Instance.GameOver();
+                GameOver();
                 return;
             }
+            _currentTime += Time.deltaTime;
             for (var i = 0; i < _tileList.Count; i++)
             {
                 var tile = _tileList[i];
+                if (tile == null) return;
                 var newPos = tile.transform.position;
                 newPos.y -= _tileFallSpeed * Time.deltaTime;
                 tile.UpdatePosition(newPos);
@@ -90,10 +93,15 @@ namespace Drland.MagicTileLite
                     // }
                     
                     tile.Enable = false;
-                    _isEndGame = true;
-                    GameplayManager.Instance.GameOver();
+                    GameOver();
                 }
             }
+        }
+
+        private void GameOver()
+        {
+            _isEndGame = true;
+            GamePlayController.Instance.GameOver();
         }
 
         public int GetTotalTile()
@@ -103,21 +111,50 @@ namespace Drland.MagicTileLite
 
         private void InitTiles()
         {
-            Invoke(nameof(SpawnTilesFromBeatMapData), _beatMap.Notes[0].SpawnTime);
+            StartCoroutine(SpawnTileCoroutine());
         }
 
-        private void SpawnTilesFromBeatMapData()
+        private IEnumerator SpawnTileCoroutine()
         {
-            if (_isEndGame) return;
-            
-            var type = (SpawnType)_beatMap.Notes[_currentBeatMapIndex].SpawnType;
-            InitTile(type);
-            _currentBeatMapIndex++;
-            if (_currentBeatMapIndex >= _beatMap.Notes.Count) return;
-            
-            var delay = _beatMap.Notes[_currentBeatMapIndex].SpawnTime - _beatMap.Notes[_currentBeatMapIndex - 1].SpawnTime;
-            Invoke(nameof(SpawnTilesFromBeatMapData), delay);
+            var fallTime = GameConstants.TILE_FALL_DISTANCE_FOR_PERFECT_HIT / _tileFallSpeed;
+            var lineIndex = GetRandomLineIndex();
+    
+            foreach (var note in _beatMap.Notes)
+            {
+                var spawnTime = note.SpawnTime / GamePlayController.Instance.Sound.GetAudioPitch();
+                var tempLineIndex = GetRandomLineIndex();
+                while (lineIndex.Equals(tempLineIndex))
+                {
+                    tempLineIndex = GetRandomLineIndex();
+                }
+
+                while (_currentTime < (spawnTime - fallTime))
+                {
+                    yield return null;
+                }
+
+                lineIndex = tempLineIndex;
+                var type = (SpawnType)_beatMap.Notes[_currentNoteIndex].SpawnType;
+                InitTile(type, lineIndex);
+                _currentNoteIndex++;
+
+                if (_currentNoteIndex >= _beatMap.Notes.Count) yield break;
+            }
         }
+
+
+        // private void SpawnTilesFromBeatMapData()
+        // {
+        //     if (_isEndGame) return;
+        //     
+        //     var type = (SpawnType)_beatMap.Notes[_currentNoteIndex].SpawnType;
+        //     InitTile(type);
+        //     _currentNoteIndex++;
+        //     if (_currentNoteIndex >= _beatMap.Notes.Count) return;
+        //     
+        //     var delay = _beatMap.Notes[_currentNoteIndex].SpawnTime - _beatMap.Notes[_currentNoteIndex - 1].SpawnTime;
+        //     Invoke(nameof(SpawnTilesFromBeatMapData), delay);
+        // }
 
         private void Spawn(int lineIndex, ObjectPool<Tile> pool)
         {
@@ -153,6 +190,11 @@ namespace Drland.MagicTileLite
             var lineIndex = GetLineIndex();
             Spawn(lineIndex, pool);
         }
+        
+        private void SpawnSingleTile(ObjectPool<Tile> pool, int lineIndex)
+        {
+            Spawn(lineIndex, pool);
+        }
 
         private int GetRandomLineIndex()
         {
@@ -183,15 +225,15 @@ namespace Drland.MagicTileLite
             return doubleIndex;
         }
 
-        private void InitTile(SpawnType type)
+        private void InitTile(SpawnType type, int lineIndex)
         {
             switch (type)
             {
                 case SpawnType.SingleTouch:
-                    SpawnSingleTile(_touchTileObjectPool);                    
+                    SpawnSingleTile(_touchTileObjectPool, lineIndex);                    
                     break;
                 case SpawnType.SingleHold:
-                    SpawnSingleTile(_holdTileObjectPool);                    
+                    SpawnSingleTile(_holdTileObjectPool, lineIndex);                    
                     break;
                 case SpawnType.DoubleTouch:
                     SpawnDoubleTile(_touchTileObjectPool);
@@ -214,5 +256,7 @@ namespace Drland.MagicTileLite
             };
             return speed;
         }
+        
+        
     }
 }

@@ -62,8 +62,8 @@ namespace Drland.MagicTileLite
             }
             _data.Score += addScoreValue;
             _data.TotalTileCollected++;
-            GameplayManager.Instance.UI.Score.UpdateScore(_data.Score);
-            GameplayManager.Instance.UI.Effect.ShowTextEffectUI(addScoreValue, _data.Streak);
+            GamePlayController.Instance.UI.Score.UpdateScore(_data.Score);
+            GamePlayController.Instance.UI.Effect.ShowTextEffectUI(addScoreValue, _data.Streak);
             UpdateTileProcess();
             UpdateStarProcess();
         }
@@ -72,7 +72,7 @@ namespace Drland.MagicTileLite
         {
             var addScoreValue = GameConstants.BONUS_HOLD_SCORE;
             _data.Score += addScoreValue;
-            GameplayManager.Instance.UI.Score.UpdateScore(_data.Score);
+            GamePlayController.Instance.UI.Score.UpdateScore(_data.Score);
         }
 
         private void UpdateStarProcess()
@@ -83,7 +83,7 @@ namespace Drland.MagicTileLite
                 if (_data.TotalTileCollected < milestone) return;
                 if ((_data.TotalTileCollected != milestone)) continue;
                 
-                GameplayManager.Instance.UI.Score.UpdateStarProcess(i);
+                GamePlayController.Instance.UI.Score.UpdateStarProcess(i);
                 return;
             }
         }
@@ -91,7 +91,7 @@ namespace Drland.MagicTileLite
         private void UpdateTileProcess()
         {
             var tileProcess = GetTileProcessNormalized();
-            GameplayManager.Instance.UI.Score.UpdateTileProcess(tileProcess);
+            GamePlayController.Instance.UI.Score.UpdateTileProcess(tileProcess);
         }
         
         private int GetScoreByAccurateInteraction(float accurate, InteractType interactType)

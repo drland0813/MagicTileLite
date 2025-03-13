@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Drland.MagicTileLite
 {
-    public class UIController : MonoBehaviour
+    public class UIControllerOld : MonoBehaviour
     {
         
     }

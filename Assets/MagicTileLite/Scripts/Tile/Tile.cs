@@ -30,6 +30,8 @@ namespace Drland.MagicTileLite
         {
             set => _enable = value;
         }
+
+        private float _timeAlive;
         
         protected virtual void Awake()
         {
@@ -39,7 +41,7 @@ namespace Drland.MagicTileLite
         
         private float CalcAccurateInteraction()
         {
-            var checkPointY = GameplayManager.Instance.GetCheckPointPosition().y;
+            var checkPointY = GamePlayController.Instance.GetCheckPointPosition().y;
             var pointToCheckY = _pointToCheckAccurateInteraction.position.y;
             var accurateInteraction = 0f;
             if (!(pointToCheckY < checkPointY)) return accurateInteraction;
@@ -70,12 +72,13 @@ namespace Drland.MagicTileLite
         {
             _isInteracted = true;
             var accurateInteraction = CalcAccurateInteraction();
-            GameplayManager.Instance.AddScore(accurateInteraction, _interactType);
-            GameplayManager.Instance.Background.TriggerLight();
+            GamePlayController.Instance.AddScore(accurateInteraction, _interactType);
+            GamePlayController.Instance.Background.TriggerLight();
         }
         
         public void UpdatePosition(Vector3 newPos)
         {
+            _timeAlive += Time.deltaTime;
             transform.position = newPos;
         }
 

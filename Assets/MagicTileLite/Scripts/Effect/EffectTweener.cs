@@ -7,30 +7,54 @@ namespace Drland.MagicTileLite
 {
     public class EffectTweener : MonoBehaviour, ITweenable
     {
-        private Tweener _tweener;
-        public void Kill()
+        private Sequence _sequence;
+
+        public Sequence GetSequence()
         {
-            _tweener?.Kill();
+            _sequence = DOTween.Sequence();
+            return _sequence;
         }
 
-        public void PunchScale(Transform target, float targetScale, float duration)
+        public void Kill()
+        {
+            _sequence.Kill();
+        }
+
+        public void InsertTween(Tween tween)
+        {
+            if (_sequence == null)
+            {
+                _sequence = GetSequence();
+            }
+            _sequence.Insert(0, tween);
+        }
+        
+        public void Append(Tween tween)
+        {
+            _sequence?.Kill();
+            _sequence = GetSequence();
+            _sequence.Append(tween);
+        }
+        
+
+        public Tween PunchScale(Transform target, float targetScale, float duration)
         {
             if (target.localScale != Vector3.one)
             {
                 target.localScale = Vector3.one;
             }
-            _tweener = target.DOPunchScale(Vector3.one * targetScale, duration);
+            return target.DOPunchScale(Vector3.one * targetScale, duration);
 
         }
 
-        public void ChangeImageAlpha(Image target, float targetAlpha, float duration)
+        public Tween ChangeImageAlpha(Image target, float targetAlpha, float duration)
         {
-            _tweener = target.DOFade(targetAlpha, duration).SetAutoKill(true);
+            return target.DOFade(targetAlpha, duration);
         }
 
-        public void ChangeImageColor(Image target, Color targetColor, float duration)
+        public Tween ChangeImageColor(Image target, Color targetColor, float duration)
         {
-            _tweener = target.DOColor(targetColor, duration);
+            return target.DOColor(targetColor, duration);
         }
     }
 }

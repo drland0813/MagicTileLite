@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Common.UI;
 using DG.Tweening;
 using Drland.MagicTileLite.UI;
 using MagicTileLite.Scripts.Mics;
@@ -26,16 +27,17 @@ namespace Drland.MagicTileLite
     
     [RequireComponent(typeof(EventTrigger))]
 
-    public class GameplayManager : MonoBehaviour
+    public class GamePlayController : MonoBehaviour
     {
-        private static GameplayManager _instance;
-        public static GameplayManager Instance => _instance;
+        private static GamePlayController _instance;
+        public static GamePlayController Instance => _instance;
         
         [SerializeField] private Transform _scoreCheckPointTransform;
         [SerializeField] private Transform _gameOverCheckPointTransform;
 
+        [FormerlySerializedAs("_gameplayUI")]
         [Header("_UI")]
-        [SerializeField] GameplayUI _gameplayUI;
+        [SerializeField] GamePlayView _gamePlayView;
         
         [SerializeField] private TileManager _tileManager;
         [SerializeField] BackgroundManager _backgroundManager;
@@ -48,8 +50,16 @@ namespace Drland.MagicTileLite
         public GameSpeed GameSpeed => _gameSpeed;
 
         public SoundManager Sound => _soundManager;
-        public GameplayUI UI => _gameplayUI;
+        public GamePlayView UI => _gamePlayView;
         public BackgroundManager Background => _backgroundManager;
+        
+        public Action OnWin;
+        public Action OnLose;
+        
+        public void BackToMainMenu()
+        {
+            OnLose?.Invoke();
+        }
 
         private void Awake()
         {
@@ -58,12 +68,12 @@ namespace Drland.MagicTileLite
 
         private void OnEnable()
         {
-            _gameplayUI.OnGameStart += WaitToStartComplete;
+            _gamePlayView.OnGameStart += WaitToStartComplete;
         }
 
         private void OnDisable()
         {
-            _gameplayUI.OnGameStart -= WaitToStartComplete;
+            _gamePlayView.OnGameStart -= WaitToStartComplete;
         }
         
         public void Init(int level)
@@ -90,7 +100,7 @@ namespace Drland.MagicTileLite
             _tileManager.Init(_gameSpeed, _soundManager.GetBeatMap());
             _scoreManager = new ScoreManager(_tileManager.GetTotalTile());
             
-            _gameplayUI.CountDownToStart(GameConstants.COUNT_DOWN_TO_START_VALUE);
+            _gamePlayView.CountDownToStart(GameConstants.COUNT_DOWN_TO_START_VALUE);
             yield return null;
         }
         
@@ -108,8 +118,19 @@ namespace Drland.MagicTileLite
             _soundManager.StopMusic();
             var score = _scoreManager.GetScore();
             var highScore = _scoreManager.GetHighScore();
-            var endGameUI = UIManager.Instance.GetEndGameUI(true);
+            var endGameUI = UIManager.Instance.ShowUIOnTop<EndGameUI>("EndGameUI");
+            endGameUI.OnReplay = () =>
+            {
+                GameFlow.RequestStateChange(this, new GamePlayPayload());
+                UIManager.Instance.ReleaseUI(endGameUI, true);
+            };
+            endGameUI.OnBackMenu = () =>
+            {
+                GameFlow.RequestStateChange(this, new MainMenuPayload());
+                UIManager.Instance.ReleaseUI(endGameUI, true);
+            };
             endGameUI.Show(score, highScore);
+            UIManager.Instance.ReleaseUI(_gamePlayView, true);
         }
 
         public void AddScore(float accurateInteraction, InteractType interactType)
