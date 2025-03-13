@@ -1,0 +1,656 @@
+{
+    "ID": 1,
+    "Name": "JVKE - golden hour",
+    "BeatMap": {
+        "Notes": [
+            {
+                "SpawnType": 0,
+                "SpawnTime": 2.4700000286102297
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 2.990000009536743
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 3.4100000858306886
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 4.050000190734863
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 4.670000076293945
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 5.309999942779541
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 5.929999828338623
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 6.510000228881836
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 7.130000114440918
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 7.849999904632568
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 8.600000381469727
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 9.34000015258789
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 9.960000038146973
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 10.5600004196167
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 11.369999885559082
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 12.460000038146973
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 13.180000305175782
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 13.930000305175782
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 14.550000190734864
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 15.1899995803833
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 15.829999923706055
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 16.510000228881837
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 17.389999389648439
+            },
+            {
+                "SpawnType": 1,
+                "SpawnTime": 17.56999969482422
+            },
+            {
+                "SpawnType": 1,
+                "SpawnTime": 19.860000610351564
+            },
+            {
+                "SpawnType": 1,
+                "SpawnTime": 20.959999084472658
+            },
+            {
+                "SpawnType": 1,
+                "SpawnTime": 23.90999984741211
+            },
+            {
+                "SpawnType": 1,
+                "SpawnTime": 24.649999618530275
+            },
+            {
+                "SpawnType": 1,
+                "SpawnTime": 25.459999084472658
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 27.520000457763673
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 28.1200008392334
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 29.31999969482422
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 30.31999969482422
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 31.239999771118165
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 32.72999954223633
+            },
+            {
+                "SpawnType": 1,
+                "SpawnTime": 33.349998474121097
+            },
+            {
+                "SpawnType": 3,
+                "SpawnTime": 34.77000045776367
+            },
+            {
+                "SpawnType": 3,
+                "SpawnTime": 36.040000915527347
+            },
+            {
+                "SpawnType": 3,
+                "SpawnTime": 38.65999984741211
+            },
+            {
+                "SpawnType": 3,
+                "SpawnTime": 40.689998626708987
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 42.90999984741211
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 43.650001525878909
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 44.400001525878909
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 45.119998931884769
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 45.25
+            },
+            {
+                "SpawnType": 3,
+                "SpawnTime": 48.11000061035156
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 49.689998626708987
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 50.33000183105469
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 51.029998779296878
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 51.72999954223633
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 52.650001525878909
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 53.380001068115237
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 54.099998474121097
+            },
+            {
+                "SpawnType": 3,
+                "SpawnTime": 54.209999084472659
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 56.58000183105469
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 59.0099983215332
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 59.66999816894531
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 60.459999084472659
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 61.290000915527347
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 62.150001525878909
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 63.189998626708987
+            },
+            {
+                "SpawnType": 3,
+                "SpawnTime": 63.900001525878909
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 65.86000061035156
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 67.16000366210938
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 67.98999786376953
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 68.88999938964844
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 70.0199966430664
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 71.05999755859375
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 71.91999816894531
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 72.86000061035156
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 73.87999725341797
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 74.77999877929688
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 75.76000213623047
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 76.77999877929688
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 77.76000213623047
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 79.19000244140625
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 80.22000122070313
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 81.55999755859375
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 82.30999755859375
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 83.18000030517578
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 84.25
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 85.13999938964844
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 86.16999816894531
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 87.11000061035156
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 88.48999786376953
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 89.26000213623047
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 90.26000213623047
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 91.19999694824219
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 92.02999877929688
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 92.93000030517578
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 93.9800033569336
+            },
+            {
+                "SpawnType": 3,
+                "SpawnTime": 94.47000122070313
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 97.69000244140625
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 98.43000030517578
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 99.3499984741211
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 100.44000244140625
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 101.08000183105469
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 101.52999877929688
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 102.51000213623047
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 103.51000213623047
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 104.62000274658203
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 105.38999938964844
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 108.6500015258789
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 109.9800033569336
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 111.8499984741211
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 113.3499984741211
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 114.75
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 116.4000015258789
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 117.30999755859375
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 118.33999633789063
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 119.5999984741211
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 120.58000183105469
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 122.41000366210938
+            },
+            {
+                "SpawnType": 3,
+                "SpawnTime": 124.37999725341797
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 128.72999572753907
+            },
+            {
+                "SpawnType": 3,
+                "SpawnTime": 130.5800018310547
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 134.63999938964845
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 137.24000549316407
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 139.58999633789063
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 140.6699981689453
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 144.3000030517578
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 146.3699951171875
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 148.25
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 150.14999389648438
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 154.16000366210938
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 156.4199981689453
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 158.88999938964845
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 161.02999877929688
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 163.00999450683595
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 164.9499969482422
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 166.8699951171875
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 168.5399932861328
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 170.24000549316407
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 171.77999877929688
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 173.66000366210938
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 175.25999450683595
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 177.17999267578126
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 179.30999755859376
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 181.0399932861328
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 183.02000427246095
+            },
+            {
+                "SpawnType": 2,
+                "SpawnTime": 185.24000549316407
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 185.72999572753907
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 186.7899932861328
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 187.72999572753907
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 189.5399932861328
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 190.5399932861328
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 191.83999633789063
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 193.67999267578126
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 194.8300018310547
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 195.36000061035157
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 196.36000061035157
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 197.3000030517578
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 198.3699951171875
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 199.22999572753907
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 200.50999450683595
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 202.24000549316407
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 203.47999572753907
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 204.0800018310547
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 206.0399932861328
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 207.14999389648438
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 208.1699981689453
+            },
+            {
+                "SpawnType": 0,
+                "SpawnTime": 210.07000732421876
+            }
+        ]
+    }
+}
