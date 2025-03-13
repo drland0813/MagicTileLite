@@ -20,7 +20,7 @@ namespace Drland.MagicTileLite
             {
                 _effectTweener.Kill();
             }
-            _effectTweener.PunchScale(_scoreText.rectTransform, 0.5f, 0.2f);
+            _effectTweener.Append(_effectTweener.PunchScale(_scoreText.rectTransform, 0.5f, 0.2f));
             _scoreText.text = scoreValue.ToString();
         }
 
